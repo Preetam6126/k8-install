@@ -1,0 +1,15 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: spot-cluster
+  region: ap-south-1
+
+managedNodeGroups:
+
+# `instanceTypes` defaults to [`m5.large`]
+- name: spot-1
+  instanceTypes: ["t2.micro", "t2.micro"]
+  spot: true
+  ssh:
+    publicKeyName: kubernete
