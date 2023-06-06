@@ -6,6 +6,8 @@ metadata:
     course: docker
     duration: 25hr
     trainer: siva
+  annotations:
+    org.docker.loa.nginx.show.off: siva
 spec:
   containers:
   - image: nginx
