@@ -23,10 +23,3 @@ spec:
     - protocol: TCP
       port: 80
       targetport: 80
-spec:
-  selector:
-    app.kubernetes.io/name: MyApp
-  ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 9376
