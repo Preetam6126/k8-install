@@ -4,14 +4,13 @@ kind: Pod
 metadata:
   name: nginx
   labels:
-    name: nginx1
+    server: nginx1
 spec:
   containers:
   - image: nginx
     name: nginx
     ports:
     - containerPort: 80
-
 ---
 apiVersion: v1
 kind: Service
@@ -19,8 +18,15 @@ metadata:
   name: nginx-service
 spec:
   selector:
-    name: nginx1
+    server: nginx1
   ports:
     - protocol: TCP
       port: 80
       targetport: 80
+spec:
+  selector:
+    app.kubernetes.io/name: MyApp
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9376
